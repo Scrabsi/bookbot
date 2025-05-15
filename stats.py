@@ -11,4 +11,11 @@ def get_char_count(text):
           char_count[char] = count + 1
      return char_count
 
-def get_sorted
+def get_sorted(dictionary):
+    char_list = []
+    for char, count in dictionary.items():
+        char_dict = {"char": char, "num": count}
+        char_list.append(char_dict)
+    char_list.sort(reverse=True, key=lambda dict: dict["num"])
+    type_char_list = type(char_list)
+    return char_list
